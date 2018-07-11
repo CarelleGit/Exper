@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class MouseHovering : MonoBehaviour
 {
+    [SerializeField]
+    private Animator Skills;
 
-    private void OnPointerEnter()
+    private void OnMouseOver()
     {
-        Debug.Log(gameObject.name + " Detected");
+        Skills.SetTrigger("Selection");
     }
     private void OnMouseExit()
     {
-        Debug.Log(gameObject.name + " Lost");
+        Skills.SetTrigger("Deselection");
     }
 }
     
